@@ -14,7 +14,8 @@ services:
       - SPRING_REDIS_PORT=6379
     volumes:
       - ./app:/usr/src/app
-    command: ["./mvnw", "spring-boot:run"]
+    working_dir: /usr/src/app
+    command: ["./gradlew", "bootRun"]
 
   db:
     image: postgres:latest
